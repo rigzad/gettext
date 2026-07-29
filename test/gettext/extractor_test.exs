@@ -481,15 +481,15 @@ defmodule Gettext.ExtractorTest do
 
     code = """
     defmodule Gettext.ExtractorTest.SameLineGettext do
-    use Gettext.Backend, otp_app: :test_application
+      use Gettext.Backend, otp_app: :test_application
     end
 
     defmodule SameLine do
-    require Gettext.Macros
+      require Gettext.Macros
 
-    def bar do
-      [Gettext.Macros.gettext_with_backend(Gettext.ExtractorTest.SameLineGettext, "foo"), Gettext.Macros.gettext_with_backend(Gettext.ExtractorTest.SameLineGettext, "foo")]
-    end
+      def bar do
+        [Gettext.Macros.gettext_with_backend(Gettext.ExtractorTest.SameLineGettext, "foo"), Gettext.Macros.gettext_with_backend(Gettext.ExtractorTest.SameLineGettext, "foo")]
+      end
     end
     """
 
